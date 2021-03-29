@@ -35,7 +35,7 @@
         </view>
         <view class="my_in_list row_bw">
             <view class="text">专业<text>(双学位填写)</text></view>
-            <picker style="width: 71%" range='{{majorList}}' bindchange='handlePicker' data-type='6'>
+            <picker style="width: 71%" range='{{majorList_two}}' bindchange='handlePicker' data-type='6'>
                 <view class="input_w">
                     <input type="text" style="width: 100%" value="{{params.discipline_two}}" disabled="{{true}}" placeholder="请选择" placeholder-class="phcolor" />
                 </view>
@@ -68,7 +68,7 @@
             </picker>
         </view>
         <view class="my_in_list row_bw">
-            <view class="text">邮箱</view>
+            <view class="text">邮箱<text>(在校生请填写 Monash 在校官方邮箱)</text></view>
             <input type="text" bindinput="handleInput" data-type='4' placeholder="请填写您的邮箱" placeholder-class="phcolor" />
         </view>
         <view class="my_in_list row_bw item_w">

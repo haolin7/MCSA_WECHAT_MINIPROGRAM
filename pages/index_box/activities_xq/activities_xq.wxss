@@ -5,6 +5,8 @@
     border-radius: 10rpx;
     overflow: hidden;
     height: 730rpx;
+    width: 547.5rpx;
+    margin: 0 auto;
 }
 
 .act_bigimg image {

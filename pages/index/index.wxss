@@ -130,7 +130,7 @@
 }
 
 .activities .act_list .act_img {
-    width: 200rpx;
+    width: 112rpx;
     height: 150rpx;
     overflow: hidden;
     border-radius: 10rpx;
@@ -144,7 +144,7 @@
 .activities .act_list .act_right {
     margin-left: 20rpx;
     position: relative;
-    width: calc(100% - 220rpx);
+    width: calc(100% - 132rpx);
     height: 150rpx;
 }
 

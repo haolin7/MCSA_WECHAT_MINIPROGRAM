@@ -62,14 +62,13 @@ Page({
             })
         }
     },
-
-    onShow: function() {
+    onTabItemTap() {
+        console.log(2222);
         let token = wx.getStorageSync('token') || '';
         if (!token) {
             return
         }
         this.setData({ showFlag: true })
-
         let info = wx.getStorageSync('userInfo') || {}
         this.setData({
             userInfo: info.info,
@@ -78,6 +77,20 @@ Page({
             'params.title': '',
         })
         this.pullDownRefresh()
+    },
+    onShow() {
+        let token = wx.getStorageSync('token') || '';
+        if (!token) {
+            return
+        }
+        this.setData({ showFlag: true })
+        let info = wx.getStorageSync('userInfo') || {}
+        this.setData({
+            userInfo: info.info,
+            card: info.card,
+            searchValue: '',
+            'params.title': '',
+        })
     },
 
     onPullDownRefresh: function() {

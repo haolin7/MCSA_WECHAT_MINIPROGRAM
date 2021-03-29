@@ -15,20 +15,20 @@
     <view class="prefer_infor">
         <view class="row_nostart p_in_t">
             <image src="/images/jiaqian.svg"></image>
-            <text>{{obj.content}}</text>
+            <text user-select>{{obj.content}}</text>
         </view>
         <view class="row_start p_in_t">
             <image src="/images/dianh.svg"></image>
-            <text>{{obj.tel}}</text>
+            <text user-select>{{obj.tel}}</text>
             <view class="cl" data-tel='{{obj.tel}}' catch:tap="handlePhone">拨打电话</view>
         </view>
         <view class="row_start p_in_t">
             <image src="/images/weixin.svg"></image>
-            <text>{{obj.wx}}</text>
+            <text user-select>{{obj.wx}}</text>
         </view>
         <view class="row_start p_in_t">
             <image src="/images/weizhi.svg"></image>
-            <text>{{obj.addr}}</text>
+            <text user-select>{{obj.addr}}</text>
         </view>
     </view>
 </view>

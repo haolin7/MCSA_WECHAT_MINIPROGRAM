@@ -16,8 +16,8 @@ Page({
             'Economics',
             'Econometrics and business Statistics',
             'Banking and Finance',
-            'Buiness',
-            'Acccounting',
+            'Business',
+            'Accounting',
             'Media,Film and Journalism',
             'Design',
             'Fine Art',
@@ -33,6 +33,36 @@ Page({
             'Nutrition and Dietetics',
             'Medicine',
             '其他'
+        ],
+        majorList_two: [
+            'Science',
+            'Education',
+            'Information Technology',
+            'Engineering',
+            'Law',
+            'Marketing',
+            'Management',
+            'Economics',
+            'Econometrics and business Statistics',
+            'Banking and Finance',
+            'Business',
+            'Accounting',
+            'Media,Film and Journalism',
+            'Design',
+            'Fine Art',
+            'Architecture',
+            'Arts',
+            'Music',
+            'Media',
+            'Nursing',
+            'Pharmacy and pharmaceutical sciences',
+            'Occupational Therapy',
+            'Physiotherapy',
+            'Social Network',
+            'Nutrition and Dietetics',
+            'Medicine',
+            '其他',
+            '无'
         ],
         params: {
             img: '', // 头像
@@ -52,16 +82,16 @@ Page({
     // 提交
     submit() {
         let params = this.data.params
-        for (let key in params) {
-            if (params[key] == '' && key != 'professional' && key != 'region' && key != 'discipline_two' && key != 'graduation') {
-                wx.showToast({
-                    title: '请完善信息',
-                    icon: 'none',
-                    duration: 1500,
-                });
-                return
-            }
-        }
+            // for (let key in params) {
+            //     if (params[key] == '' && key != 'professional' && key != 'region' && key != 'discipline_two' && key != 'graduation') {
+            //         wx.showToast({
+            //             title: '请完善信息',
+            //             icon: 'none',
+            //             duration: 1500,
+            //         });
+            //         return
+            //     }
+            // }
         wx.showModal({
             content: '是否确认，确认后将无法更改',
             success: async(result) => {
@@ -170,7 +200,7 @@ Page({
                 })
                 break;
             case '6': //专业2
-                let discipline_two = this.data.majorList[value]
+                let discipline_two = this.data.majorList_two[value]
                 this.setData({
                     'params.discipline_two': discipline_two
                 })
