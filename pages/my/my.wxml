@@ -44,7 +44,7 @@
         <image src="/images/t_29.png"></image>
     </navigator>
     <view class="my_bot">
-        <text>点击下方按钮联系客户，我们将尽快回复~</text>
+        <text>点击下方按钮联系小助手，我们将尽快回复~</text>
         <button class="row_center" open-type="contact">联系我们</button>
     </view>
 </view>
