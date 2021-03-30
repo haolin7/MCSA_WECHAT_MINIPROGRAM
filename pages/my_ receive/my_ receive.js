@@ -92,6 +92,14 @@ Page({
             //         return
             //     }
             // }
+            // 如果是在读生的话  把 职业 、地区、毕业年份都删了
+        if (this.data.params.identity == '在读生') {
+            this.setData({
+                'params.professional': '',
+                'params.region': '',
+                'params.graduation': '',
+            })
+        }
         wx.showModal({
             content: '是否确认，确认后将无法更改',
             success: async(result) => {
@@ -122,7 +130,7 @@ Page({
             success: async(res) => {
                 // tempFilePath可以作为img标签的src属性显示图片
                 const tempFilePaths = res.tempFilePaths[0]
-                this.setData({ tempFilePaths })
+
 
                 wx.uploadFile({
                     url: getApp().globalData.baseUrl + 'api/common/image',
@@ -136,6 +144,7 @@ Page({
                         let img = JSON.parse(result.data).data
                         this.setData({
                             'params.img': img,
+                            tempFilePaths
                         })
                     }
                 })

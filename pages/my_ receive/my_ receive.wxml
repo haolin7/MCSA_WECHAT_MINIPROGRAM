@@ -49,14 +49,14 @@
                 </view>
             </picker>
         </view>
-        <view class="my_in_list row_bw">
+        <view class="my_in_list row_bw" wx:if="{{params.identity=='毕业生'}}">
             <view class="text">
                 职业
                 <text>(毕业生填写)</text>
             </view>
             <input type="text" bindinput="handleInput" data-type='3' placeholder="请填写您的职业" placeholder-class="phcolor" />
         </view>
-        <view class="my_in_list row_bw item_w">
+        <view class="my_in_list row_bw item_w" wx:if="{{params.identity=='毕业生'}}">
             <view class="text">
                 地区
                 <text>(毕业生填写)</text>
@@ -79,7 +79,7 @@
                 </view>
             </picker>
         </view>
-        <view class="my_in_list row_bw item_w">
+        <view class="my_in_list row_bw item_w" wx:if="{{params.identity=='毕业生'}}">
             <view class="text">
                 毕业年份
                 <text>(毕业生填写)</text>
