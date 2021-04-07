@@ -128,9 +128,14 @@ Page({
         wx.chooseImage({
             count: 1,
             success: async(res) => {
+                // 在请求之前显示 加载中
+                wx.showLoading({
+                    title: '上传中',
+                    mask: true,
+                });
+
                 // tempFilePath可以作为img标签的src属性显示图片
                 const tempFilePaths = res.tempFilePaths[0]
-
 
                 wx.uploadFile({
                     url: getApp().globalData.baseUrl + 'api/common/image',
@@ -140,12 +145,32 @@ Page({
                         'token': wx.getStorageSync('token')
                     },
                     success: (result) => {
-                        // 获取图片路径
-                        let img = JSON.parse(result.data).data
-                        this.setData({
-                            'params.img': img,
-                            tempFilePaths
-                        })
+                        console.log(JSON.parse(result.data).code);
+                        if (JSON.parse(result.data).code == -1) {
+                            wx.clearStorageSync();
+                            wx.navigateTo({
+                                url: '/pages/login/login',
+                            });
+                            return
+                        }
+                        if (JSON.parse(result.data).code == 1) {
+                            wx.showToast({
+                                title: JSON.parse(result.data).msg,
+                                icon: 'none',
+                                duration: 1500,
+                            });
+                        }
+                        if (JSON.parse(result.data).code == 0) {
+                            // 获取图片路径
+                            let img = JSON.parse(result.data).data
+                            this.setData({
+                                'params.img': img,
+                                tempFilePaths
+                            })
+                        }
+                    },
+                    complete: () => {
+                        wx.hideLoading()
                     }
                 })
             }
