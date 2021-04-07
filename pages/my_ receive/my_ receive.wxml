@@ -3,7 +3,7 @@
     <view class="my_receive my_receive1">
         <view class="text" style="padding:30rpx 0">
             上传照片
-            <text style="color: #bb3439;">(作为会员卡头像，方便形式折扣时商家进行人员认证)</text>
+            <text style="color: #bb3439;">(作为会员卡头像，方便行使折扣时商家进行人员认证)</text>
         </view>
         <view class="upload_box">
             <view class="up_img row_center" catch:tap="handleChooseImage">
