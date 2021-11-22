@@ -80,11 +80,14 @@
     background: #dbdbdb;
 }
 
+.swiper {}
+
 .swiper_dot {
     margin-top: 20rpx;
 }
 
 .swiper_list {
+    border-radius: 10rpx;
     position: relative;
 }
 

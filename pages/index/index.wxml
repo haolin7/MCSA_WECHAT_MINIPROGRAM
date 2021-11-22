@@ -12,12 +12,12 @@
   </view>
 </view>
 <view class="banner">
-  <view class="page-section page-section-spacing swiper swiper-container">
+  <view class="page-section page-section-spacing swiper swiper-container" style="border-radius:10rpx">
     <swiper class="t_heig" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular bindchange='handleSwiper'>
       <swiper-item class="row_center swiper_list" wx:for="{{banner}}" wx:key="index" catch:tap="handleWeb" data-src='{{item.url}}'>
         <navigator url="" open-type="navigate">
           <view class="swi_text">{{item.title}}</view>
-          <image class="swiper-item" src="{{item.img}}"></image>
+          <image class="swiper-item" style="border-radius:10rpx" src="{{item.img}}"></image>
         </navigator>
       </swiper-item>
     </swiper>
